@@ -273,6 +273,17 @@ function parseRule(field) {
         }
     });
 
+    if (!result) {
+        let nextNode = field.el.nextElementSibling;
+        if (nextNode != null && nextNode.className.match(/error/)) {
+            if(!nextNode.className.match(/show/)){
+
+            }
+        }else{
+            field.el.innerHTML+=`<div>${error.message}</div>`;
+        }
+    }
+
     return {
         result: result,
         error: error
