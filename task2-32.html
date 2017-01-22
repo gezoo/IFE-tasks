@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task2-32</title>
+
+</head>
+<body>
+<form id="form">
+    <input type="text" name="userName" id="btnUsername">
+    <input type="email" name="email">
+    <input type="date" name="date">
+    <p>
+        <button type="submit">ok</button>
+    </p>
+</form>
+<script src="Scripts/task2-32.js"></script>
+<script>
+
+    var validator = new Validator({
+        formName: "form",
+        fields: {
+            email: {
+                rules: "required|isEmail|maxLength(36)",
+                fail: "必填|不是邮件地址格式|最大长度为{{param}}",
+            },
+            userName: {
+                rules: "required|isLimit(2)",
+                fail: "必填|最大长度为{{param}}---",
+                err: function (err) {
+                    alert(err.id + err.message);
+                }
+            },
+            date: {
+                rules: "required|isDate",
+                fail: "必填|日期{{value}}不正确",
+                err: function (err) {
+                    alert(err.message);
+                }
+            },
+        },
+        callback: function (isSuccess, error) {
+            console.log(isSuccess);
+            console.log(error);
+        }
+    });
+
+    validator.addDefineMethod({
+       isLimit:function (param) {
+           return false;
+       }
+    });
+//    var btnSubmit = document.querySelector("button[type=button]");
+//    btnSubmit.onclick = function (event) {
+//        validator.validateByName("userName");
+//    };
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿body {
+    margin: 0 auto;
+}
+
+.space {
+    background-color: black;
+    height: 600px;
+    position: relative;
+}
+
+.ship {
+    height: 45px;
+    width: 120px;
+    line-height: 45px;
+    position: relative;
+    top: 10px;
+    border-radius: 30px;
+    background-color: gray;
+    color: black;
+}
+
+
+.planet {
+    background-color: blue;
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+}
+
+.console {
+    background-color: white;
+    width: 100%;
+}
+
+    .console ul {
+        list-style: none;
+    }
+
+        .console ul li {
+            display: inline-block;
+        }
+
+    .console input[type=button] {
+        border: 2px solid lightslategrey;
+        border-radius: 6px;
+        font-size: 24px;
+    }

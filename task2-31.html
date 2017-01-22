@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2-31</title>
+    <script src="Scripts/utils.js"></script>
+    <script src="Scripts/task2-31.js"></script>
+    <style>
+        body, select, input[type=text] {
+            font-family: "Microsoft YaHei", sans-serif;
+            font-size: 20px;
+        }
+
+        select, input[type=text] {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 160px;
+        }
+
+        p {
+            margin-left: 15%;
+        }
+
+        div label {
+            width: 15%;
+            float: left;
+            text-align: right;
+            margin-right: 15px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<form action="">
+    <p id="radio">
+        <input type="radio" name="school" id="students" checked="checked">
+        <label for="students">在校生</label>
+        <input type="radio" name="school" id="not_students">
+        <label for="not_students">非在校生</label>
+    </p>
+    <div id="school_info">
+        <label>学校</label>
+        <select name="city" id="city">
+        </select>
+        <select name="school" id="school">
+        </select>
+    </div>
+    <div id="worker_info" class="hide">
+        <label>就业单位</label><input type="text">
+    </div>
+</form>
+
+</body>
+</html>

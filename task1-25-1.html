@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        ul li {
+            list-style: none;
+            margin: 5px;
+        }
+
+        .closeSubtree {
+            display: none;
+        }
+
+        .showSubtree {
+            display: block;
+        }
+
+        .add, .delete {
+            display: none;
+        }
+
+        .icon {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border: 1px solid black;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .title:hover .add {
+            display: inline-block;
+            font-size: 20px;
+            height: 20px;
+            width: 20px;
+            border: 1px solid black;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .title:hover .delete {
+            display: inline-block;
+            font-size: 20px;
+            height: 20px;
+            width: 20px;
+            border: 1px solid black;
+            line-height: 20px;
+            text-align: center;
+        }
+    </style>
+    <script src="Scripts/task1-25-1.js">
+       
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Tree</legend>
+        <input id="txtSearch" type="search" name="search" value="">
+        <button id="btnSearch">search</button>
+        <button id="btnClear">Clear</button>
+    </fieldset>
+
+    <div id="tree-area">
+
+        <ul>
+            <li class="folder">
+                <div class="title">
+                    <span class="icon">+</span>
+                    文件夹1
+                    <span class="add">+</span>
+                    <span class="delete">x</span>
+                </div>
+                <ul class="closeSubtree">
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                </ul>
+            </li>
+            <li class="folder">
+                <div class="title">
+                    <span class="icon">+</span>
+                    文件夹1
+                    <span class="add">+</span>
+                    <span class="delete">x</span>
+                </div>
+                <ul class="closeSubtree">
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                </ul>
+            </li>
+            <li class="folder">
+                <div class="title">
+                    <span class="icon">+</span>
+                    文件夹1
+                    <span class="add">+</span>
+                    <span class="delete">x</span>
+                </div>
+                <ul class="closeSubtree">
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                </ul>
+            </li>
+            <li class="folder">
+                <div class="title">
+                    <span class="icon">+</span>
+                    文件夹1
+                    <span class="add">+</span>
+                    <span class="delete">x</span>
+                </div>
+                <ul class="closeSubtree">
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                </ul>
+            </li>
+            <li class="folder">
+                <div class="title">
+                    <span class="icon">+</span>
+                    文件夹1
+                    <span class="add">+</span>
+                    <span class="delete">x</span>
+                </div>
+                <ul class="closeSubtree">
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                    <li class="file">
+                        <div class="title">文件1<span class="delete">x</span></div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

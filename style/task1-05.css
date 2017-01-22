@@ -1,0 +1,125 @@
+﻿* {
+    margin: 0;
+}
+
+body {
+    background-color: gainsboro;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+header,
+footer {
+    display: table;
+    height: 70px;
+    width: 100%;
+    line-height: 70px;
+    background-color: black;
+    color: white;
+}
+
+footer {
+    line-height: 70px;
+    text-align: center;
+}
+
+header ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+header a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+header li {
+    display: inline;
+}
+
+article,
+aside {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+aside {
+    float: right;
+    width: 400px;
+}
+
+article {
+    margin-right: 480px;
+}
+
+    article h2 {
+        margin-bottom: 10px;
+    }
+
+    article h3 {
+        margin-bottom: 10px;
+    }
+
+    article .auther,
+    article .time {
+        display: inline-block;
+        margin-bottom: 3px;
+        color: gray;
+    }
+
+    article p {
+        text-indent: 2em;
+    }
+
+    article figure {
+        margin: 5px;
+        border: 1px solid #aaa;
+        text-align: center;
+        display: inline-block;
+    }
+
+    article table {
+        margin: 0 auto;
+        width: 100%;
+        border-color: #ccc;
+        border-collapse: collapse;
+    }
+
+    article thead {
+        background-color: #333;
+        color: white;
+    }
+
+    article tfoot {
+        background-color: #ccc;
+    }
+
+aside .tips {
+    float: left;
+    width: 35%;
+    text-align: right;
+    margin-right: 15px;
+}
+
+aside p {
+    margin-left: 35%;
+    padding-left: 15px;
+    text-align: left;
+    font-size: 13px;
+    color: gainsboro;
+}
+
+aside section {
+    margin: 5px 0;
+}
+
+aside input[type=submit] {
+    width: 100%;
+    background: #3355D0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid #3355D0;
+    font-weight: 800;
+}

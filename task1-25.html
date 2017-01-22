@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./Scripts/task1-25.js"></script>
+    <style>
+         .directory div {
+            
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+         .directory .subdirectory {
+             margin-left: 60px;
+         }
+         .node-header {
+             
+         }
+        
+        #tree-area div {
+            /*border: 1px solid black;*/
+        }
+
+        .directory {
+        }
+
+        .subdirectory {
+        }
+
+        .not-border {
+            border: none;
+            background-color: white;
+            color: black;
+        }
+
+        .icon {
+            border: 1px solid black;
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            line-height: 15px;
+            text-align: center;
+        }
+        .close {
+            display: none;
+        }
+        .open {
+            display: block;
+        }
+
+        .operation {
+            display: none;
+        }
+
+        .node-header:hover .operation {
+            display: inline-block;
+            font-size: 20px;
+        }
+        .subdirectory:hover .operation {
+            display: inline-block;
+            font-size: 20px;
+        }
+        .add {
+            
+        }
+        .minus {
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Tree</legend>
+            <input id="txtSearch" type="search" name="search" value="">
+            <button id="btnSearch">search</button>
+            <button id="btnClear">Clear</button>
+            <br>
+            <div id="tree-area">
+                <div class="directory">
+                    <div class="node-header">
+                        <span class="icon">+</span>
+                        <span>目录</span>
+                        <span class="operation">
+                            <span class="add">+</span>
+                            <span class="minus">-</span>
+                        </span>
+                    </div>
+                    <div class="subdirectory close">
+                        <div>文件1</div>
+                        <div>文件2</div>
+                        <div>文件3</div>
+                        <div>文件4</div>
+                        <div>文件5</div>
+                        <div class="directory">
+                            <div>
+                                <span class="icon">+</span>
+                                <span>目录</span>
+                                <span class="operation">
+                                    <span class="add">+</span>
+                                    <span class="minus">-</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="directory">
+                    <div class="node-header">
+                        <span class="icon">+</span>
+                        <span>目录</span>
+                        <span class="operation">
+                            <span class="add">+</span>
+                            <span class="minus">-</span>
+                        </span>
+                    </div>
+                    <div class="subdirectory close">
+                        <div>文件1</div>
+                        <div>文件2</div>
+                        <div>文件3</div>
+                        <div>文件4</div>
+                        <div>文件5</div>
+                    </div>
+                </div>
+                <div class="directory">
+                    <div class="node-header">
+                        <span class="icon">+</span>
+                        <span>目录</span>
+                        <span class="operation">
+                            <span class="add">+</span>
+                            <span class="minus">-</span>
+                        </span>
+                    </div>
+                    <div class="subdirectory close">
+                        <div>文件1</div>
+                        <div>文件2</div>
+                        <div>文件3</div>
+                        <div>文件4</div>
+                        <div>文件5</div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</body>
+</html>

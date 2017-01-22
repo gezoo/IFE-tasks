@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+        #queue {
+            display: inline-block;
+        }
+
+        .item {
+            height: 30px;
+            line-height: 30px;
+            margin: 0 5px;
+            padding: 0 5px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputRegion">
+        <input type="text" id="inputNumber" value="" />
+        <input type="button" id="leftIn" name="leftIn" value="左侧入" />
+        <input type="button" id="rightIn" name="rightIn" value="右侧入" />
+        <input type="button" id="leftOut" name="leftOut" value="左侧出" />
+        <input type="button" id="rightOut" name="rightOut" value="右侧出" />
+    </div>
+    <div id="queueRegion">
+
+    </div>
+    <script>
+        var $ = function (id) {
+            return document.getElementById(id);
+        }
+
+        var Queue = {
+            arr: [],
+            leftIn: function (number) {
+                this.arr.unshift(number);
+                this.renderQueue();
+            },
+            rightIn: function (number) {
+                this.arr.push(number);
+                this.renderQueue();
+            },
+            leftOut: function () {
+                var value = this.arr.shift();
+                this.renderQueue();
+                alert(value);
+            },
+            rightOut: function () {
+                var value = this.arr.pop();
+                this.renderQueue();
+                alert(value);
+            },
+            remove: function (number) {
+                for (var i = 0; i < this.arr.length; i++) {
+                    if (number === this.arr[i]) {
+                        this.arr.splice(i, 1);
+                    }
+                }
+                this.renderQueue();
+            },
+            isEmpty: function () {
+                if (this.arr.length === 0) return true;
+                return false;
+            },
+            renderQueue: function () {
+                var html = "";
+                for (var i = 0; i < this.arr.length; i++) {
+                    html += "<span class='item' data-item='" + this.arr[i] + "'>" + this.arr[i] + "</span>";
+                }
+                $("queueRegion").innerHTML = html;
+            }
+        }
+
+
+        function init() {
+            $("queueRegion").onclick = function (evt) {
+                var item = evt.target.dataset.item;
+                if (item != null) {
+                    Queue.remove(item);
+                }
+            }
+
+            $("leftIn").onclick = function () {
+                var inputValue = $("inputNumber").value;
+                if (validation(inputValue) == false) return;
+                Queue.leftIn(inputValue);
+            };
+            $("rightIn").onclick = function () {
+                var inputValue = $("inputNumber").value;
+                if (validation(inputValue) == false) return;
+                Queue.rightIn(inputValue);
+            };
+            $("leftOut").onclick = function () {
+                Queue.leftOut();
+            };
+            $("rightOut").onclick = function () {
+                Queue.rightOut();
+            };
+        }
+
+        function validation(number) {
+            if (isNaN(parseInt(number))) {
+                alert("只能为数字");
+                return false;
+            }
+            return true;
+        }
+
+        init();
+
+    </script>
+</body>
+</html>

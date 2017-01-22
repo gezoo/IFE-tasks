@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2-29</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        .input {
+            -webkit-border-radius:5px;
+            -moz-border-radius:5px;
+            border-radius: 5px;
+            border:1px solid lightgray;
+            width: 150px;
+            height: 25px;
+        }
+
+        button {
+            background-color: #058cff;
+            border: none;
+            -webkit-border-radius:5px;
+            -moz-border-radius:5px;
+            border-radius: 5px;
+            width: 50px;
+            height: 25px;
+            color: #FFFFFF;
+            font-family: "Microsoft YaHei", sans-serif;
+            font-weight: bold;
+        }
+
+        #info{
+            margin: 0;
+            padding-left: 35px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .warning {
+            color: lightgrey;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .inputError {
+            border: 1px solid red;
+        }
+
+        .inputWarning {
+            border: 1px solid lightgrey;
+        }
+
+        .inputSuccess {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>
+        <label for="validate">名称</label>
+        <input type="text" id="validate" class="input">
+        <button id="submit">验证</button>
+    </p>
+    <div>
+        <label for="validate" id="info"></label>
+    </div>
+</div>
+<script>
+    var btnValidate = document.getElementById("submit");
+    var txtInfo = document.getElementById("info");
+    btnValidate.onclick = function () {
+        validate();
+    };
+
+    function validate() {
+        var input = document.getElementById("validate");
+
+        var strLength = getStrLength(input.value);
+        if (strLength == 0) {
+            txtInfo.innerHTML = "姓名不能为空";
+            txtInfo.className = "error";
+            input.className = "input inputError";
+        } else if (strLength >= 4 && strLength <= 16) {
+            txtInfo.innerHTML = "格式正确";
+            txtInfo.className = "success";
+            input.className = "input inputSuccess";
+        } else {
+            txtInfo.innerHTML = "字符数应为4~16位";
+            txtInfo.className = "warning";
+            input.className = "input inputWarning";
+        }
+    }
+
+    function getStrLength(str) {
+        var strLength = 0;
+        for (var i = 0; i < str.length; i++) {
+            var charCode = str.charAt(i);
+            if (charCode.match(/[\u4e00-\u9fa5]/)) {
+                strLength += 2;
+            } else {
+                strLength += 1;
+            }
+        }
+        return strLength;
+    }
+
+</script>
+</body>
+</html>

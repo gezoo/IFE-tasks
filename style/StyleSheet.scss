@@ -1,0 +1,42 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.grid-container {
+    background-color: #e5e5e5;
+}
+
+.row:before,
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.row {
+    padding: 10px;
+}
+
+.cell {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #999;
+    height: 50px;
+    background-color: #eee;
+}
+
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    width: 8.33%;
+}
+
+@media all and (min-width:768px){
+    @for $i from 1 through 12{
+        .col-#{$i}{
+            width: 8.3333% * $i;
+        }
+    }
+}

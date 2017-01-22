@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+        #queueRegion {
+            display: flex;
+            align-items: flex-end;
+            height: 100px;
+        }
+
+        .item {
+            width: 20px;
+            background-color: red;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputRegion">
+        <input type="text" id="inputNumber" value="" />
+        <input type="button" id="btn-leftIn" name="leftIn" value="左侧入" />
+        <input type="button" id="btn-rightIn" name="rightIn" value="右侧入" />
+        <input type="button" id="btn-leftOut" name="leftOut" value="左侧出" />
+        <input type="button" id="btn-rightOut" name="rightOut" value="右侧出" />
+        <input type="button" id="btn-sort" value="排序" />
+    </div>
+    <div id="queueRegion">
+
+    </div>
+    <script>
+        var $ = function (id) {
+            return document.getElementById(id);
+        }
+
+        var Queue = {
+            arr: [],
+            leftIn: function (number) {
+                if (this.isMaxQueue()) return;
+                this.arr.unshift(number);
+                this.renderQueue();
+                //alert(number);
+            },
+            rightIn: function (number) {
+                if (this.isMaxQueue()) return;
+                this.arr.push(number);
+                this.renderQueue();
+                //alert(number);
+            },
+            leftOut: function () {
+                var value = this.arr.shift();
+                this.renderQueue();
+                alert(value);
+            },
+            rightOut: function () {
+                var value = this.arr.pop();
+                this.renderQueue();
+                alert(value);
+            },
+            remove: function (number) {
+                for (var i = 0; i < this.arr.length; i++) {
+                    if (number === this.arr[i]) {
+                        this.arr.splice(i, 1);
+                    }
+                }
+                this.renderQueue();
+            },
+            isEmpty: function () {
+                if (this.arr.length === 0) return true;
+                return false;
+            },
+            isMaxQueue: function () {
+                if (this.arr.length === 60) {
+                    alert("已达到队列最大长度60");
+                    return true;
+                }
+                return false;
+            },
+            sort: function () {
+                var arrTmp = this.arr;
+                if (arrTmp.length < 2) return;
+                var i, j;
+                for (j = 0; j < arrTmp.length; j++) {
+
+                    for (i = arrTmp.length - 1; i > j; i--) {
+                        var swapTmp = 0;
+                        if (arrTmp[i] < arrTmp[i - 1]) {
+                            swapTmp = arrTmp[i - 1];
+                            arrTmp[i - 1] = arrTmp[i];
+                            arrTmp[i] = swapTmp;
+                            Queue.renderQueue();
+                            sleep();
+                        }
+                    }
+                }
+
+                //模拟Thread.Sleep()
+                function sleep() {
+                    count = 0;
+                    var timeout =setTimeout(function() {
+                        count == 1;
+                    },200);
+                    while (count != 1) {
+                        
+                            clearTimeout(timeout);
+                            break;
+                        
+                    }
+                }
+            },
+            renderQueue: function () {
+                var html = "";
+                for (var i = 0; i < this.arr.length; i++) {
+                    html += "<div class='item' data-item='" + this.arr[i] + "' title='" + this.arr[i] + "' style='height:" + this.arr[i] + "px'></div>";
+                }
+                $("queueRegion").innerHTML = html;
+            }
+        }
+
+
+        function init() {
+            $("queueRegion").onclick = function (evt) {
+                var item = evt.target.dataset.item;
+                if (item != null) {
+                    Queue.remove(item);
+                }
+            }
+
+            $("btn-leftIn").onclick = function () {
+                var inputValue = $("inputNumber").value;
+                if (validation(inputValue) == false) return;
+                Queue.leftIn(inputValue);
+            };
+
+            $("btn-rightIn").onclick = function () {
+                var inputValue = $("inputNumber").value;
+                if (validation(inputValue) == false) return;
+                Queue.rightIn(inputValue);
+            };
+
+            $("btn-leftOut").onclick = function () { Queue.leftOut(); };
+
+            $("btn-rightOut").onclick = function () { Queue.rightOut(); };
+
+            $("btn-sort").onclick = function () {
+                Queue.sort();
+            }
+        }
+
+        function validation(number) {
+            if (isNaN(parseInt(number))) {
+                alert("只能为数字");
+                return false;
+            }
+            if (number < 10 || number > 100) {
+                alert("限制输入的数字在10-100");
+                return false;
+            }
+            return true;
+        }
+
+        init();
+
+    </script>
+</body>
+</html>

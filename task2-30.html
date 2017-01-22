@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2-10</title>
+    <script src="Scripts/utils.js"></script>
+    <script src="Scripts/task2-30.js"></script>
+    <style>
+
+        button[type=submit] {
+            height: 40px;
+            width: 60px;
+            border-radius: 5px;
+            border: 2px solid deepskyblue;
+            background-color: deepskyblue;
+            color: #FFFFFF;
+            margin-left: calc(40% + 15px);
+        }
+
+        p input {
+            border-radius: 5px;
+            border: 1px solid #67778b;
+        }
+
+        p label {
+            float: left;
+            width: 40%;
+            text-align: right;
+            margin-right: 15px;
+        }
+
+        .info {
+            display: none;
+        }
+
+        .show-info {
+            display: block;
+            margin-left: calc(40% + 15px);
+            color: gray;
+        }
+
+        .info-error {
+            color: red;
+        }
+
+        .info-success {
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+<form id="infoForm">
+    <div id="form">
+        <p>
+            <label for="txtName">名称</label>
+            <input type="text" name="name" id="txtName">
+        </p>
+        <p class="info"></p>
+        <p>
+            <label for="txtPassword">密码</label>
+            <input type="password" name="password" id="txtPassword">
+        </p>
+        <p class="info"></p>
+        <p>
+            <label for="txtConfirmPwd">确认密码</label>
+            <input type="password" name="confirmPwd" id="txtConfirmPwd">
+        </p>
+        <p class="info"></p>
+        <p>
+            <label for="txtEmail">邮箱</label>
+            <input type="email" name="email" id="txtEmail">
+        </p>
+        <p class="info"></p>
+        <button type="submit" value="提交">提交</button>
+    </div>
+</form>
+</body>
+</html>

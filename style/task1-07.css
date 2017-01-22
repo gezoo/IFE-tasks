@@ -1,0 +1,291 @@
+﻿body {
+    margin: 0 auto;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.wrap {
+    margin: 0 auto;
+    width: 1280px;
+    height: 100%;
+}
+
+nav {
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 5px;
+}
+
+    nav .logo,
+    nav .login,
+    nav ul {
+        text-align: center;
+        display: inline-block;
+    }
+
+    nav .logo {
+        width: 170px;
+        background: url('../image/task1-7-image/icon-1.png') no-repeat left;
+        background-size: 16% 50%;
+        font-size: 24px;
+    }
+
+        nav .logo a {
+            text-decoration: none;
+        }
+
+            nav .logo a:link,
+            nav .logo a:visited {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: black;
+            }
+
+    nav .login {
+        width: 100px;
+        float: right;
+        background: url('../image/task1-7-image/icon-2.jpg') no-repeat left;
+    }
+
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        nav ul li {
+            display: inline-block;
+            width: 100px;
+        }
+
+            nav ul li:link,
+            nav ul li:visited {
+                text-align: center;
+                padding: 6px;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: black;
+            }
+
+            nav ul li:hover {
+                color: #F04C57;
+                border-bottom-width: 4px;
+                border-bottom-style: solid;
+                border-bottom-color: red;
+            }
+
+
+.pic {
+    height: 650px;
+    background: url('../image/task1-7-image/pic01.jpg') no-repeat;
+}
+
+    .pic .msg {
+        position: relative;
+        top: 270px;
+        left: 120px;
+        color: white;
+    }
+
+.msg p {
+    margin: 0;
+}
+
+.msg .line1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.msg .line2 {
+    font-size: 22px;
+}
+
+.msg .line3 {
+    background-color: #E31212;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 33px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+
+
+.category {
+    height: 240px;
+    text-align: center;
+}
+
+    .category .cell {
+        display: inline-block;
+        width: 24%;
+    }
+
+    .category .img {
+        height: 130px;
+        line-height: 130px;
+    }
+
+    .category p {
+        border-right: 2px solid #534141;
+    }
+
+    .category .cell:last-child p {
+        border: none;
+    }
+
+
+.banner {
+    height: 400px;
+    background-color: #EDEAEA;
+    font-size: 50px;
+    color: #534141;
+    text-align: center;
+}
+
+    .banner img {
+        margin-top: 80px;
+    }
+
+.cityinfo {
+    height: 260px;
+    background: url('../image/task1-7-image/pic02.jpg') no-repeat;
+    padding-top: 80px;
+}
+
+    .cityinfo p {
+        margin: 10px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .cityinfo .cityinfotitle {
+        font-size: 22px;
+    }
+
+    .cityinfo span {
+        margin: 0 auto;
+        display: block;
+        height: 20px;
+        width: 30px;
+        border-bottom: 3px solid #fff;
+        transition: width 0.4s ease-in-out;
+    }
+
+        .cityinfo span:hover {
+            width: 300px;
+        }
+
+    .cityinfo select,
+    .cityinfo input {
+        width: 240px;
+        height: 36px;
+        line-height: 36px;
+    }
+
+        .cityinfo input[type=submit]:hover {
+            background-color: #E31212;
+            border-radius: 3px;
+        }
+
+        .cityinfo input[type=submit] {
+            background-color: #BE4F48;
+            border-bottom-style: none;
+            cursor: pointer;
+            color: #fff;
+            font-size: 16px;
+            margin: 0;
+            border: 0;
+            outline: 0;
+            letter-spacing: 30px;
+            text-align: center;
+        }
+
+.email {
+    height: 400px;
+    background-color: #33363F;
+    text-align: center;
+    color: #fff;
+}
+
+    .email .msg2 {
+        padding-top: 40px;
+    }
+
+        .email .msg2:first-child {
+            font-size: 22px;
+        }
+
+    .email .text {
+        height: 40px;
+        width: 100%;
+        display: inline-block;
+        font-size: 0;
+    }
+
+    .email input {
+        line-height: normal;
+    }
+
+        .email input[type=email] {
+            width: 500px;
+            height: 40px;
+            font-size: 15px;
+            box-sizing: border-box;
+            cursor: pointer;
+            padding-left: 10px;
+        }
+
+        .email input[type=submit] {
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            background-color: #75757F;
+            color: #fff;
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            letter-spacing: 5px;
+        }
+
+footer .back {
+    background-color: #30303A;
+    height: 60px;
+    line-height: 60px;
+
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    
+}
+
+    footer .back span {
+        display: inline-block;
+    }
+
+
+    footer .back:first-child span {
+        
+    }
+
+    footer .back:last-child span {
+        
+    }
+
+footer a:link,
+footer a:visited {
+    text-decoration: none;
+    color: #fff;
+    font-size: 10px;
+}
+
+footer a {
+    transition: color 0.5s;
+}
+
+    footer a:hover {
+        color: #75757F;
+    }

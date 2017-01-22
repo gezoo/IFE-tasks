@@ -1,0 +1,140 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: gainsboro;
+    font-family: "Microsoft YaHei",  sans-serif;
+}
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #708090;
+}
+
+
+h1 {
+    line-height: 70px;
+}
+
+main {
+    position: absolute;
+}
+
+h2,
+h3 {
+    padding: 5px 0;
+}
+
+h3 {
+    color: gray;
+}
+
+.auther,
+.time {
+    padding: 5px 0;
+    color: gray;
+}
+
+article,
+aside {
+    margin: 20px;
+    padding: 15px;
+
+    box-shadow: 1px 1px 2px 1px #848484;
+    background-color: white;
+}
+
+    article p {
+        margin: 20px 0;
+
+        text-indent: 2em;
+    }
+
+    article ol {
+        margin: 10px 40px;
+    }
+
+    article table {
+        width: 100%;
+
+        text-align: left;
+        border-collapse: collapse;
+    }
+
+        article table thead {
+            background-color: black;
+            color: white;
+        }
+
+        article table tfoot {
+            background-color: gray;
+            color: black;
+            font-weight: bold;
+        }
+
+        article dl {
+            width: 240px;
+            margin: 5px;
+            border: 1px solid #708090;
+        }
+        article dl span {
+            display: block;
+            text-align: center
+        }
+
+    aside h4 {
+        height: 40px;
+        line-height: 40px;
+        padding: 10px;
+
+        border-left: 4px solid #708090;
+    }
+
+    aside .tips {
+        float: left;
+
+        width: 35%;
+        padding-right: 15px;
+
+        text-align: right;
+    }
+
+    aside  p {
+        margin-left: 35%;
+        padding-left: 15px;
+
+        text-align: left;
+
+        font-size: 13px;
+        color: gainsboro;
+    }
+
+    aside .submitButton {
+        width: 100%;
+        height: 30px;
+
+        border-radius: 5px;
+        border: none;
+        background-color: blue;
+        color: white;
+
+        font-size: 19px;
+    }
+
+footer {
+    width: 100%;
+    height: 70px;
+
+    line-height: 70px;
+
+    text-align: center;
+
+    background-color: black;
+    color: white;
+}

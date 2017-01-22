@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+        #queue {
+            display: inline-block;
+        }
+
+        .item {
+            height: 30px;
+            line-height: 30px;
+            margin: 0 5px;
+            padding: 0 5px;
+            background-color: red;
+            color: white;
+        }
+
+        .itemGreen {
+            height: 30px;
+            line-height: 30px;
+            margin: 0 5px;
+            padding: 0 5px;
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputRegion">
+        <!--<input type="textarea" id="inputNumber" value="" />-->
+        <textarea id="inputNumber"></textarea>
+        <input type="button" id="leftIn" name="leftIn" value="左侧入" />
+        <input type="button" id="rightIn" name="rightIn" value="右侧入" />
+        <input type="button" id="leftOut" name="leftOut" value="左侧出" />
+        <input type="button" id="rightOut" name="rightOut" value="右侧出" />
+        <br />
+        <input type="text" id="txtSearch" value="" />
+        <input type="button" id="query" value="查询" />
+    </div>
+    <div id="queueRegion">
+
+    </div>
+    <script>
+        var $ = function (id) {
+            return document.getElementById(id);
+        }
+
+        var Queue = {
+            arr: [],
+            leftIn: function (numbers) {
+                for (var i = 0; i < numbers.length; i++) {
+                    this.arr.unshift(numbers[i]);
+                }
+                this.renderQueue();
+            },
+            rightIn: function (numbers) {
+                for (var i = 0; i < numbers.length; i++) {
+                    this.arr.push(numbers[i]);
+                }
+                this.renderQueue();
+            },
+            leftOut: function () {
+                var value = this.arr.shift();
+                this.renderQueue();
+                alert(value);
+            },
+            rightOut: function () {
+                var value = this.arr.pop();
+                this.renderQueue();
+                alert(value);
+            },
+            remove: function (index) {
+                this.arr.splice(index, 1);
+                this.renderQueue();
+            },
+            isEmpty: function () {
+                if (this.arr.length === 0) return true;
+                return false;
+            },
+            renderQueue: function () {
+                var html = "";
+                for (var i = 0; i < this.arr.length; i++) {
+                    html += "<span class='item' data-index='" + i + "'>" + this.arr[i] + "</span>";
+                }
+                $("queueRegion").innerHTML = html;
+            }
+        }
+
+
+        function init() {
+            $("queueRegion").onclick = function (evt) {
+                var index = evt.target.dataset.index;
+                if (index != null) {
+                    Queue.remove(index);
+                }
+            }
+
+            $("leftIn").onclick = function () {
+                var inputValue = $("inputNumber").value;              
+                var inputValues = inputValue.split(' ').reverse();
+                Queue.leftIn(inputValues);
+            };
+
+            $("rightIn").onclick = function () {
+                var inputValue = $("inputNumber").value;
+                var inputValues = inputValue.split(' ').reverse();
+                Queue.rightIn(inputValues);
+            };
+
+            $("leftOut").onclick = function () {
+                Queue.leftOut();
+            };
+
+            $("rightOut").onclick = function () {
+                Queue.rightOut();
+            };
+
+            $("query").onclick = function() {
+                var queryValue = $("txtSearch").value;
+                var nodes = $("queueRegion").childNodes;
+                for (var i = 0; i < nodes.length; i++) {
+                    if (nodes[i].textContent.match(queryValue)) {
+                        nodes[i].className = "itemGreen";
+                    }
+                }
+            };
+        }
+
+        function validation(number) {
+            //if (isNaN(parseInt(number))) {
+            //    alert("只能为数字");
+            //    return false;
+            //}
+            return true;
+        }
+
+        init();
+
+    </script>
+</body>
+</html>

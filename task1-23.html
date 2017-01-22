@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Task1-23</title>
+    <style>
+        #region {
+            margin: 0 auto;
+        }
+
+            #region div {
+                border: 1px solid gray;
+                margin: 10px;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
+                background-color: white;
+                -moz-transition: background-color 500ms;
+                -o-transition: background-color 500ms;
+                -webkit-transition: background-color 500ms;
+                transition: background-color 500ms;
+            }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+    <script src="Scripts/utils.js"></script>
+    <script src="Scripts/task1-23.js"></script>
+</head>
+<body>
+    <div>
+        <input type="button" id="btn-dfd" value="深度优先遍历" />
+        <input type="button" id="btn-bfd" value="广度优先遍历" />
+        <input type="search" id="search" value="" />
+        <input type="button" id="btn-dfs" value="深度优先搜索" />
+        <input type="button" id="btn-bfs" value="广度优先搜索" />
+    </div>
+    <div id="region">
+
+        <div id="super">
+            Super
+            <div>
+                Cat
+                <div>
+                    Apple
+                    <div>Pear</div>
+                    <div>Pig</div>
+                    <div>Cala</div>
+                    <div>Saccer</div>
+                </div>
+                <div>Phone</div>
+                <div>
+                    <div>Book</div>
+                    <div>School</div>
+                </div>
+            </div>
+            <div>
+                Note
+                <div>
+                    Humen
+                    <div>Code</div>
+                    <div>Operate</div>
+                    <div>Man</div>
+                </div>
+                <div>
+                    Program
+                    <div>
+                        Bement
+                        <div>Cat</div>
+                    </div>
+                    <div>Glass</div>
+                </div>
+            </div>
+            <div>Fish</div>
+        </div>
+    </div>
+</body>
+</html>
